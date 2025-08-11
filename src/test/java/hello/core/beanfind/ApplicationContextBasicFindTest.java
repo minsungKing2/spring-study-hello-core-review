@@ -11,6 +11,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 import static org.assertj.core.api.Assertions.*;
 
+//스프링 빈을 조회하는 테스트 코드
 public class ApplicationContextBasicFindTest {
 
     AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
@@ -33,7 +34,7 @@ public class ApplicationContextBasicFindTest {
     }
 
     @Test
-    @DisplayName("구체 타입으로 조회")
+    @DisplayName("구체 타입으로 조회") //구체 타입으로 조회
     void findBeanByName2() {
         MemberServiceImpl memberService = ac.getBean("memberService", MemberServiceImpl.class);
         assertThat(memberService).isInstanceOf(MemberServiceImpl.class);
