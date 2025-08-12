@@ -31,11 +31,15 @@ public class AppConfig {
     //AppConfig 리팩터링 후
     @Bean //각 메서드에 @Bean 을 붙여주면, 스프링 컨테이너에 스프링 빈으로 등록한다.
     public MemberService memberService() {
+        //1번
+        System.out.println("call AppConfig.memberService");
         return new MemberServiceImpl(memberRepository());
     }
 
     @Bean
     public OrderService orderService() {
+        //1qjs
+        System.out.println("call AppConfig.orderService");
         return new OrderServiceImpl(
                 memberRepository(),
                 discountPolicy());
@@ -43,6 +47,8 @@ public class AppConfig {
 
     @Bean
     public MemberRepository memberRepository() {
+        //2번? 3번?
+        System.out.println("call AppConfig.memberRepository");
         return new MemoryMemberRepository();
     }
 
