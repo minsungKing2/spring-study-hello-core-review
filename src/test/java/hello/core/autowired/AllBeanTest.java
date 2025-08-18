@@ -15,7 +15,7 @@ import java.util.Map;
 import static org.assertj.core.api.Assertions.*;
 
 public class AllBeanTest {
-
+//이 테스트는 실행 안됨 -> OrderServiceImpl.java 에 문제있는듯
     @Test
     void findAllBean() {
         ApplicationContext ac = new AnnotationConfigApplicationContext(AutoAppConfig.class, DiscountService.class);
