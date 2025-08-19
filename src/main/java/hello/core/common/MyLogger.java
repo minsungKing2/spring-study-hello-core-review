@@ -3,12 +3,13 @@ package hello.core.common;
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Component;
 
 import java.util.UUID;
 
 @Component
-@Scope(value = "request") //request scope
+@Scope(value = "request", proxyMode = ScopedProxyMode.TARGET_CLASS) //request scope
 //로그를 출력하기 위한 클래스
 public class MyLogger {
 
